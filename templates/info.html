@@ -1,8 +1,17 @@
-{% extends "index.html" %}
+{% extends "index.html" %} 
 
 {% block content %}
-<h1>Historical Stock data for {{ info.company_name }}</h1>
-<h2>Ticker symbol: {{ info.symbol|upper }}</h2>
-{{ info.graph }}
-<button><a href="/">Go back</a></button>
+<h1 class="text-center">Historical Stock data for {{ info.company_name }}</h1>
+<h2 class="text-center">Ticker symbol: {{ info.symbol|upper }}</h2>
+<div class="d-flex flex-column align-items-center">
+    {{ info.graph }}
+    <button class="btn btn-outline-primary mt-2 text-center">
+        <a href="/" class="text-reset text-decoration-none">Go back</a>
+    </button>
+</div>
+<style>
+    svg {
+        max-width: 100%;
+    }
+</style>
 {% endblock %}
